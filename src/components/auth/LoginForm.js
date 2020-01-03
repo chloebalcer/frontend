@@ -42,27 +42,32 @@ class LoginForm extends Component {
                         onSubmit={this.props.handleSubmit(this.onSubmit)}
                         className='ui form'
                     >
-                        <Field
+                        <input
                             name='username'
                             type='text'
                             component={this.renderField}
-                            label='Username or Email'
+                            placeholder='Adresse mail ou Pseudo'
                         />
-                        <Field
+                        <br />
+                        <input
                             name='password'
                             type='password'
                             component={this.renderField}
-                            label='Password'
+                            placeholder='Mot de Passe'
                         />
                         <Field
                             name='non_field_errors'
                             type='hidden'
                             component={this.hiddenField}
                         />
-                        <button type="primary">Login</button>
+                        <button type="primary">CONNECTION</button>
                     </form>
-                    <p style={{ marginTop: '1rem' }}>
-                        Don't have an account? <Link to='/register'>Register</Link>
+
+                    <p>
+
+                        Ou<form action="/register">
+                            <input type="submit" value="Créer un compte" />
+                        </form>
                     </p>
                 </div>
             </div>

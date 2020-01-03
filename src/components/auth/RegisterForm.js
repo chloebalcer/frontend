@@ -3,6 +3,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import { register } from '../../actions/auth';
+import LoginForm from './LoginForm';
 
 class RegisterForm extends Component {
     renderField = ({ input, label, type, meta: { touched, error } }) => {
@@ -63,7 +64,7 @@ class RegisterForm extends Component {
                         <button className='ui primary button'>Register</button>
                     </form>
                     <p style={{ marginTop: '1rem' }}>
-                        Already have an account? <Link to='/login'>Login</Link>
+                        Already have an account? <Link to='/' >Login</Link>
                     </p>
                 </div>
             </div>
