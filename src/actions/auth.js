@@ -64,7 +64,7 @@ export const logout = () => async (dispatch, getState) => {
 };
 
 // REGISTER USER
-export const register = ({ username, email, password }) => async dispatch => {
+export const register = ({ username, email, password, first_name, last_name, status, student_code }) => async dispatch => {
     // Headers
     const config = {
         headers: {
@@ -73,7 +73,7 @@ export const register = ({ username, email, password }) => async dispatch => {
     };
 
     // Request Body
-    const body = JSON.stringify({ username, email, password });
+    const body = JSON.stringify({ username, email, password, first_name, last_name, status, student_code });
 
     try {
         const res = await axios.post('http://127.0.0.1:8000/api/auth/register', body, config);

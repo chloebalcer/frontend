@@ -25,9 +25,6 @@ class Header extends Component {
         // added
         const guestLinks = (
             <div className='right menu'>
-                <Link to='/register' className='item'>
-                    Sign Up
-          </Link>
                 <Link to='/login' className='item'>
                     Login
           </Link>
@@ -37,9 +34,6 @@ class Header extends Component {
         // updated
         return (
             <div className='ui inverted menu' style={{ borderRadius: '0' }}>
-                <Link to='/' className='item'>
-                    Home
-          </Link>
                 {isAuthenticated ? userLinks : guestLinks}
             </div>
         );

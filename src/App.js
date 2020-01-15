@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import history from './history';
 import { loadUser } from './actions/auth';
-import { Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Homepage from './components/homepage/homepage';
 import RegisterForm from './components/auth/RegisterForm';

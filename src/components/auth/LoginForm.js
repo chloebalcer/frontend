@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -6,11 +5,11 @@ import { Field, reduxForm } from 'redux-form';
 import { login } from '../../actions/auth';
 
 class LoginForm extends Component {
-    renderField = ({ input, label, type, meta: { touched, error } }) => {
+    renderField = ({ input, placeholder, type, meta: { touched, error } }) => {
         return (
             <div className={`field ${touched && error ? 'error' : ''}`}>
-                <label>{label}</label>
-                <input {...input} type={type} />
+
+                <input {...input} type={type} placeholder={placeholder} />
                 {touched && error && (
                     <span col='red'>{error}</span>
                 )}
@@ -46,23 +45,25 @@ class LoginForm extends Component {
                             name='username'
                             type='text'
                             component={this.renderField}
-                            label='Username or Email'
+                            placeholder='Adresse mail ou Pseudo'
                         />
                         <Field
                             name='password'
                             type='password'
                             component={this.renderField}
-                            label='Password'
+                            placeholder='Mot de Passe'
                         />
                         <Field
                             name='non_field_errors'
                             type='hidden'
                             component={this.hiddenField}
                         />
-                        <button type="primary">Login</button>
+                        <button type="primary">CONNECTION</button>
                     </form>
                     <p style={{ marginTop: '1rem' }}>
-                        Don't have an account? <Link to='/register'>Register</Link>
+                        Ou <form action="/register">
+                            <input type="submit" value="Creer un compte" />
+                        </form>
                     </p>
                 </div>
             </div>
@@ -72,6 +73,7 @@ class LoginForm extends Component {
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 });
+
 LoginForm = connect(
     mapStateToProps,
     { login }
