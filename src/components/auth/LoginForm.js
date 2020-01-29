@@ -61,17 +61,11 @@ class LoginForm extends Component {
                         />
                         <button type="primary">CONNECTION</button>
                     </form>
-<<<<<<< HEAD
-                    <p style={{ marginTop: '1rem' }}>
-                        Ou <form action="/register">
-                            <input type="submit" value="Creer un compte" />
-=======
 
                     <p>
 
                         Ou<form action="/register">
                             <input type="submit" value="Créer un compte" />
->>>>>>> fe37399fa21243124ea6b5538ff047c8cc1b86ea
                         </form>
                     </p>
                 </div>

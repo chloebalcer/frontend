@@ -1,3 +1,9 @@
+// CHALLENGES
+export const GET_CHALLENGES = 'GET_CHALLENGES';
+export const GET_CHALLENGE = 'GET_CHALLENGE';
+export const ADD_CHALLENGE = 'ADD_CHALLENGE';
+
+// LOGIN & REGISTER
 export const USER_LOADING = 'USER_LOADING';
 export const USER_LOADED = 'USER_LOADED';
 export const AUTH_ERROR = 'AUTH_ERROR';

@@ -110,11 +110,7 @@ class RegisterForm extends Component {
                         <button className='ui primary button'>INSCRIPTION</button>
                     </form>
                     <p style={{ marginTop: '1rem' }}>
-<<<<<<< HEAD
                         Vous avez dejà un compte ? <Link to='/login'>Se Connecter</Link>
-=======
-                        Already have an account? <Link to='/' >Login</Link>
->>>>>>> fe37399fa21243124ea6b5538ff047c8cc1b86ea
                     </p>
                 </div>
             </div >

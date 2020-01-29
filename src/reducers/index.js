@@ -2,10 +2,11 @@ import auth from './auth';
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import { LOGOUT_SUCCESS } from '../actions/types';
-
+import challenges from './challenges';
 
 const appReducer = combineReducers({
     form: formReducer,
+    challenges,
     auth
 });
 
