@@ -1,8 +1,48 @@
 import React, { Component } from 'react';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Toggle from 'react-toggle'
 
+
+var moment = require('moment');
 
 class ChallengeForm extends Component {
+    renderDatePicker = ({ input, label, placeholder, minDate, maxDate, meta: { touched, error } }) => {
+        return (
+            <div>
+                <DatePicker
+
+                    className="form-control"
+                    dateFormat="yyyy-MM-dd"
+                    selected={input.value || null}
+                    onChange={input.onChange}
+                    minDate={minDate}
+                    maxDate={maxDate}
+                    disabledKeyboardNavigation
+                    placeholderText={placeholder}
+                />
+            </div>
+        );
+    };
+
+    renderSelectField(field) {
+        const className = `form-input ${field.meta.touched && field.meta.error ? 'has-error' : ''}`;
+        return (
+            <div className={className}>
+                <label>{field.myLabel}</label>
+
+
+                <select  {...field.input}  >
+                    {field.children}
+                </select>
+
+                <div className="error">
+                    {field.meta.touched ? field.meta.error : ''}
+                </div>
+            </div>
+        )
+    }
     renderField = ({
         input, label, meta: { touched, error }
     }) => {
@@ -14,12 +54,12 @@ class ChallengeForm extends Component {
                     <span className='ui pointing red basic label'>{error}</span>
                 )}
             </div>
-
         );
     };
     onSubmit = formValues => {
         this.props.onSubmit(formValues);
     };
+
 
     render() {
         return (
@@ -31,36 +71,39 @@ class ChallengeForm extends Component {
                     <Field name='title' component={this.renderField} label='Titre :' />
 
                     <Field name='description' component={this.renderField} label='Résumé du Challenge :' />
-                    <Field name="language" label='Language de Programmation :' component={this.renderField}>
-                        <option />
+                    <Field name="language" label='Language de Programmation :' component={this.renderSelectField}>
+                        <option value="0" selected>Language de Programmation</option>
                         <option value="4">Python</option>
                         <option value="5">R</option>
                     </Field>
-                    <Field name='starting_date' component={this.renderField} label='Disponible du : ' />
-                    <Field name='ending_date' component={this.renderField} label='au :' />
-                    <p>Type de Challenge :</p>
-                    <select
+                    <Field name='starting_date' placeholder="YYYY-MM-DD" type='text' component={this.renderDatePicker} label='Disponible du : ' />
+                    <Field name='ending_date' placeholder="YYYY-MM-DD" component={this.renderDatePicker} label='au :' />
+                    <Field type="hidden" name="owner" component={this.renderField} />
+                    <Field name="challenge_type" label='Type de Challenge :' component={this.renderSelectField}>
 
-                        name='challenge_type'
-                        component={this.renderChoice}
-                        label='Type de Challenge :'
+                        <option value="0" selected>Type de Challenge</option>
+                        <option value='1'>Coding Game</option>
+                        <option value='2'>Professional</option>
+                        <option value='3'>Community</option>
 
-                    >
-                        <option value="1">Coding Game</option>
-                        <option value="2">Professional</option>
-                        <option value="3">Community</option>
-                    </select>
+                    </Field>
                     <Field name='allocated_time' component={this.renderField} label='Temps fourni :' />
-                    <Field name='contact_mail' component={this.renderField} label='Adresse E-mail :' />
-                    <Field name='auto-correction' component={this.renderField} label='Activer la correction automatique ' />
+                    <Field name='contact_mail' component={this.renderField} label='Adresse E-mail :' validate={required} />
+                    <Field name='auto-correction' component={renderToggleInput} label='Activer la correction automatique ' />
 
                     <button className='ui primary button'>Soumettre</button>
                 </form>
-            </div>
+            </div >
 
         );
     }
 }
+
+const renderToggleInput = (field) => (
+    <Toggle checked={field.input.value} onChange={field.input.onChange} icons={false} />
+);
+
+
 
 const validate = formValues => {
     const errors = {};
@@ -71,6 +114,8 @@ const validate = formValues => {
 
     return errors;
 };
+
+const required = value => (value ? undefined : 'Required');
 
 export default reduxForm({
     form: 'challengeForm',

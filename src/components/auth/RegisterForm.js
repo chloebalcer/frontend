@@ -18,18 +18,23 @@ class RegisterForm extends Component {
         );
     };
 
-    renderChoice = ({ input, meta: { touched, error } }) => {
+    renderSelectField(field) {
+        const className = `form-input ${field.meta.touched && field.meta.error ? 'has-error' : ''}`;
         return (
-            <div className={`field ${touched && error ? 'error' : ''}`}>
+            <div className={className}>
+                <label>{field.myLabel}</label>
 
-                <input {...input} />
-                {touched && error && (
-                    <span className='ui pointing red basic label'>{error}</span>
-                )}
+
+                <select  {...field.input}  >
+                    {field.children}
+                </select>
+
+                <div className="error">
+                    {field.meta.touched ? field.meta.error : ''}
+                </div>
             </div>
-        );
-    };
-
+        )
+    }
     onSubmit = formValues => {
         this.props.register(formValues);
     };
@@ -73,18 +78,14 @@ class RegisterForm extends Component {
                             placeholder='E-mail'
                             validate={required}
                         />
+                        <Field name="status" label='Statut :' component={this.renderSelectField}>
 
-                        <select
+                            <option value="0" selected>Select Status</option>
+                            <option value='11'>Etudiant</option>
+                            <option value='12'>Entreprise</option>
+                            <option value='13'>Professionnel</option>
 
-                            name='status'
-                            component={this.renderChoice}
-                            label='Je suis'
-
-                        >
-                            <option value="11">Etudiant</option>
-                            <option value="12">Professeur</option>
-                            <option value="13">Entreprise</option>
-                        </select>
+                        </Field>
 
                         <Field
                             name='student_code'
@@ -118,6 +119,7 @@ class RegisterForm extends Component {
     }
 }
 
+var StatusOptions = [(11, "Etudiant"), (12, "Professeur"), (13, "Entreprise")];
 const required = value => (value ? undefined : 'Required');
 
 const minLength = min => value =>

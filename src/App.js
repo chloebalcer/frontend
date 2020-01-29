@@ -23,15 +23,12 @@ class App extends Component {
       <Provider store={store}>
         <Router history={history}>
           <Header />
-
           <Switch>
             <Route exact path='/challenges' component={Dashboard} />
             <Route exact path='/register' component={RegisterForm} />
             <Route exact path='/login' component={LoginForm} />
           </Switch>
-
         </Router>
-        <Dashboard />
       </Provider>
     );
   }
