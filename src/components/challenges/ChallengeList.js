@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getChallenges } from '../../actions/challenges';
-import DateTime from 'react-datetime'
-import classNames from 'classnames'
 
 class ChallengeList extends Component {
     componentDidMount() {
@@ -24,34 +22,7 @@ class ChallengeList extends Component {
         );
     }
 }
-const DateTimeField = ({ tooltip, tooltipPlacement, disabled, input, label, placeholder, meta: { valid, touched, error }, ...props }) => {
-    const classes = classNames('form-group', {
-        'has-error': (touched && !valid),
-        'has-success': (touched && valid)
-    })
-    console.log(input.value)
 
-    return (<div className={classes}>
-        {label &&
-            <label htmlFor={input.name}>{label}</label>
-        }
-        <DateTime
-            name={input.name}
-            //value={input.value}
-            locale='en'
-            dateFormat='MM/DD/YYYY'
-            timeFormat='hh:mm A'
-            onChange={param => {
-                console.log(param)
-                input.onChange(param)
-            }}
-            disabled={disabled}
-        />
-        {(!valid && touched) &&
-            <p className='help-block'>{error}</p>
-        }
-    </div>)
-}
 const mapStateToProps = state => ({
     challenges: Object.values(state.challenges)
 });
