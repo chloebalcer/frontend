@@ -3,6 +3,12 @@ export const GET_CHALLENGES = 'GET_CHALLENGES';
 export const GET_CHALLENGE = 'GET_CHALLENGE';
 export const ADD_CHALLENGE = 'ADD_CHALLENGE';
 
+// EXERCISES
+export const GET_EXERCISES = 'GET_EXERCISES';
+export const GET_EXERCISE = 'GET_EXERCISE';
+export const ADD_EXERCISE = 'ADD_EXERCISE';
+
+
 // LOGIN & REGISTER
 export const USER_LOADING = 'USER_LOADING';
 export const USER_LOADED = 'USER_LOADED';

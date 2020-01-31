@@ -12,6 +12,7 @@ import Header from './components/layout/Header';
 import Homepage from './components/homepage/homepage';
 import RegisterForm from './components/auth/RegisterForm';
 import Dashboard from './components/challenges/Dashboard';
+import ExerciseBoard from './components/exercises/ExerciseBoard';
 
 class App extends Component {
   componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
         <Router history={history}>
           <Header />
           <Switch>
+            <Route exact path='/exercises' component={ExerciseBoard} />
             <Route exact path='/challenges' component={Dashboard} />
             <Route exact path='/register' component={RegisterForm} />
             <Route exact path='/login' component={LoginForm} />

@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Toggle from 'react-toggle'
-import DateTimePicker from 'react-datetime-picker';
 import moment from 'moment';
-import DayPicker from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
-import "../../css/challenges.css";
 import TimePicker from 'react-time-picker';
-import DateTime from 'react-datetime';
 import 'rc-time-picker/assets/index.css';
 
 
