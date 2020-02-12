@@ -58,6 +58,8 @@ class ExerciseForm extends Component {
         );
     };
 
+
+    // A Modifier -> quitte a supprimer et a utiliser le script MultiSelect.js
     renderMultiselect = ({ input, data, valueField, textField }) => {
         const { atTop, multi, multiValue, options, value } = this.state;
         return (
@@ -100,14 +102,17 @@ class ExerciseForm extends Component {
         })
     };
 
+
+    // Modifier la gestion des fichiers
     render() {
         return (
             <div className='ui segment'>
                 <form
+
                     onSubmit={this.props.handleSubmit(this.onSubmit)}
                     className='ui form error'
                 >
-                    <Field name='title' component={this.renderField} label="Titre de l'Exercice : " />
+                    <Field name='title' component={this.renderField} label="Titre de l'Exercice : " validate={required} />
 
                     <Field name='description' component={this.renderField} label="Indiquez l'énoncé de l'exercice : " />
                     <Field name="level" label="Indiquez le niveau de l'exercice " component={this.renderSelectField}>
@@ -120,12 +125,16 @@ class ExerciseForm extends Component {
                     </Field>
                     <Field name='key_words' component={CreatableMulti} label="Indiquez les mots-clés correspondant à l'exercice :" />
                     <input name="file" type="file"
-                        id="image"
-                        accept="image/png, image/jpeg" onChange={this.handleImageChange} required />
+                        id="file"
+                        accept="file/pdf, file/ltx" onChange={this.handleImageChange} validatefile={required} />
 
                     <input type="submit" />
 
                     <button className='ui primary button'>Créer Exercice</button>
+
+                </form>
+                <form action="/ExerciseList">
+                    <input type="submit" value="Créer un compte" />
                 </form>
             </div >
 
@@ -146,6 +155,7 @@ const validate = formValues => {
     return errors;
 };
 
+// A modifier
 const validatefile = formValues => {
     const errors = {};
 
@@ -163,5 +173,6 @@ const required = value => (value ? undefined : 'Required');
 export default reduxForm({
     form: 'exerciseForm',
     touchOnBlur: true,
-    validate
+    validate,
+    validatefile
 })(ExerciseForm);

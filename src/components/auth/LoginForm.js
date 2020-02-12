@@ -41,14 +41,13 @@ class LoginForm extends Component {
                         onSubmit={this.props.handleSubmit(this.onSubmit)}
                         className='ui form'
                     >
-                        <input
+                        <Field
                             name='username'
                             type='text'
                             component={this.renderField}
                             placeholder='Adresse mail ou Pseudo'
                         />
-                        <br />
-                        <input
+                        <Field
                             name='password'
                             type='password'
                             component={this.renderField}
@@ -62,12 +61,10 @@ class LoginForm extends Component {
                         <button type="primary">CONNECTION</button>
                     </form>
 
-                    <p>
+                    Ou <form action="/register">
+                        <input type="submit" value="Créer un compte" />
+                    </form>
 
-                        Ou<form action="/register">
-                            <input type="submit" value="Créer un compte" />
-                        </form>
-                    </p>
                 </div>
             </div>
         );

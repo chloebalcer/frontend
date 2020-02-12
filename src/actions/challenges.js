@@ -6,7 +6,7 @@ import { reset } from 'redux-form';
 
 // GET challenges
 export const getChallenges = () => async (dispatch, getState) => {
-    const res = await axios.get('http://127.0.0.1:8000/api/challenges/', tokenConfig(getState));
+    const res = await axios.get('http://127.0.0.1:8000/api/challenges', tokenConfig(getState));
     dispatch({
         type: GET_CHALLENGES,
         payload: res.data

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addChallenge } from '../../actions/challenges';
 import ChallengeForm from './ChallengeForm';
 
+
 class ChallengeCreate extends Component {
     onSubmit = formValues => {
         this.props.addChallenge(formValues);
@@ -16,7 +17,6 @@ class ChallengeCreate extends Component {
         );
     }
 }
-
 export default connect(
     null,
     { addChallenge }

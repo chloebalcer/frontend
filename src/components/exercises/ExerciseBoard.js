@@ -8,7 +8,7 @@ class ExerciseBoard extends Component {
             <div className='ui container'>
                 <div>Exercise Create Form</div>
                 <ExerciseCreate />
-                <ExerciseList />
+
             </div>
         );
     }
