@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import brace from 'brace';
 import 'brace/mode/python';
 import 'brace/theme/github';
+import { Form, FormGroup, Col, Button } from 'react-bootstrap';
 
 //import AceEditor from 'react-ace';
 
@@ -54,12 +55,11 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-      <textarea rows="4" cols="50" value={this.state.value} onChange={this.handleChange}></textarea>
-      
-      <button bsStyle="primary" onClick={() => this.run(this.state.value)}>
-        Run
-      </button>
-      <textarea type="textarea" class="form-control" style={{'white-space': 'pre-wrap'}} rows="4" cols="50" value={this.state.value_output} readOnly></textarea> 
+            <textarea rows="4" cols="50" value={this.state.value} onChange={this.handleChange}></textarea>
+            <button bsStyle="primary" onClick={() => this.run(this.state.value)}>
+            Run
+            </button>
+          <textarea type="textarea" class="form-control" style={{'white-space': 'pre-wrap'}} rows="4" cols="50" value={this.state.value_output} readOnly></textarea> 
       </div>
     );
   }
