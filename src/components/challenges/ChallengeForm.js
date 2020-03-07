@@ -110,7 +110,7 @@ class ChallengeForm extends Component {
 
     render() {
         return (
-            <div className='ui segment'>
+            <div className='ui-container'>
                 <form
                     onSubmit={this.props.handleSubmit(this.onSubmit)}
                     className='ui form error'
@@ -138,7 +138,12 @@ class ChallengeForm extends Component {
                     <Field name='auto_correction' component={this.renderToggleInput} label='Activer la correction automatique ' />
 
                     <button className='ui primary button'>Soumettre</button>
+                    <br />
+                    
                 </form>
+                <form action="/challenges">
+            <input type="submit" value="Retour à la liste" />
+        </form>
             </div >
 
         );

@@ -9,7 +9,7 @@ class ChallengeList extends Component {
 
     render() {
         return (
-            <div className='ui relaxed divided list' style={{ marginTop: '2rem' }}>
+            <div className='ui-container' style={{ marginTop: '2rem' }}>
                 {this.props.challenges.map(challenge => (
                     <div className='item' key={challenge.id}>
                         <i className='large calendar outline middle aligned icon' />
