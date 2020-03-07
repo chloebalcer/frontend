@@ -1,0 +1,105 @@
+@font-face {
+    font-family: const;
+    src: url("fonts/Construthinvism.ttf") format("truetype") ;
+}
+@font-face {
+    font-family: basicFont;
+    src: url("fonts/Catamaran-Medium.ttf") format("truetype") ;
+}
+@font-face {
+    font-family: Thinny;
+    src: url("fonts/Catamaran-Thin.ttf") format("truetype") ;
+}
+@font-face {
+    font-family: azonix;
+    src: url("fonts/Azonix.otf") format("opentype") ;
+}
+.menu-ul{
+    list-style-type: none;
+    margin: 70px;
+    float: right;
+    margin-right: 50 px;
+}
+
+.menu-ul li{
+    display : inline-flex;
+    margin:0 50px 0 0;
+    
+    }
+    
+.link{
+    text-decoration: none;
+    color: #131515;
+    font-weight:2000;
+    letter-spacing: 3px;
+    font-size: small;
+    font-family: basicFont;
+    
+    
+}
+
+.link:hover { color:  #00F2F2; }
+
+.brandName{
+    font-family: const;
+    display : inline-flex;
+    margin: 50px 50px 50px 100px;
+    color: #0D00A4;
+    font-weight: bolder;
+    letter-spacing: 6px;
+    font-size: 3em;
+    -webkit-text-stroke: 3px #00F2F2;
+  
+}
+
+/* * {background-color: #FCFFFC} */
+
+
+.wrapper{
+    margin-top: 5em;
+    margin-left: 5em;
+    text-align: left;
+    line-height: 3em;
+    font-size: 20px;
+    font-family: basicFont;
+}
+
+.button{
+    color: white;
+    border: none;
+    background-color: black;
+    font-family: basicFont;
+    border-radius: 4px;
+    padding: 10px 24px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.thin{
+    font-family: Thinny;
+}
+
+.ui-container {
+    margin-top: 3em;
+    text-align: center;
+    font-family: basicFont;
+}
+
+.visibleLink {
+    text-decoration: none;
+    color: #00F2F2;
+    font-weight:2000;
+    letter-spacing: 3px;
+    font-size: small;
+
+}
+
+.field{
+    box-sizing: border-box;
+    margin: 8px 0;
+    width: 140;
+    padding: '10px 20px';
+    display: 'block';
+    margin: '20px auto';
+
+}
