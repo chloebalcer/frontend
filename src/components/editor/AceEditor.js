@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import brace from 'brace';
-import 'brace/mode/python';
-import 'brace/theme/github';
+// import brace from 'brace';
+// import 'brace/mode/python';
+// import 'brace/theme/github';
 
 //import AceEditor from 'react-ace';
 
