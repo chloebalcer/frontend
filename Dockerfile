@@ -6,7 +6,6 @@ WORKDIR /app/
 # copy package.json to the /app/ folder
 COPY package.json ./
 
-
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
 

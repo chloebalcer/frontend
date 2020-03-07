@@ -44,74 +44,75 @@ class RegisterForm extends Component {
             return <Redirect to='/' />;
         }
         return (
-            <div className='ui container'>
+            <div className='ui-container'>
                 <div className='ui segment'>
                     <form
                         onSubmit={this.props.handleSubmit(this.onSubmit)}
                         className='ui form'
                     >
-                        <Field
+                        <Field className="field"
                             name='first_name'
                             type='text'
                             component={this.renderField}
-                            placeholder='Prénom'
+                            placeholder='First Name'
                             validate={[required, minLength3]}
                         />
-                        <Field
+                        <Field className="field"
                             name='last_name'
                             type='text'
                             component={this.renderField}
-                            placeholder='Nom de Famille'
+                            placeholder='Last Name'
                             validate={[required, minLength3]}
                         />
-                        <Field
+                        <Field className="field"
                             name='username'
                             type='text'
                             component={this.renderField}
                             placeholder='Pseudo'
                             validate={[required, minLength3, maxLength15]}
                         />
-                        <Field
+                        <Field className="field"
                             name='email'
                             type='email'
                             component={this.renderField}
                             placeholder='E-mail'
                             validate={required}
                         />
-                        <Field name="status" label='Statut :' component={this.renderSelectField}>
+                        <Field className="field" name="status" label='Statut :' component={this.renderSelectField}>
 
                             <option value="0" selected>Select Status</option>
-                            <option value='11'>Etudiant</option>
-                            <option value='12'>Entreprise</option>
-                            <option value='13'>Professionnel</option>
+                            <option value='11'>Student</option>
+                            <option value='12'>Firm</option>
+                            <option value='13'>Teacher</option>
 
                         </Field>
 
-                        <Field
+                        <Field className="field"
                             name='student_code'
                             type='text'
                             component={this.renderField}
-                            placeholder='Code Etudiant'
+                            placeholder='Student Code'
                             validate={[required, minLength3]}
                         />
-                        <Field
+                        <Field className="field"
                             name='password'
                             type='password'
                             component={this.renderField}
-                            placeholder='Nouveau Mot de Passe'
+                            placeholder='New Password'
                             validate={required}
                         />
-                        <Field
+                        <Field className="field"
                             name='password2'
                             type='password'
                             component={this.renderField}
-                            placeholder='Vérification mot de passe'
+                            placeholder='Password verification'
                             validate={[required, passwordsMatch]}
                         />
-                        <button className='ui primary button'>INSCRIPTION</button>
+                      
+                        <button className='ui primary button'>REGISTER</button>
                     </form>
                     <p style={{ marginTop: '1rem' }}>
-                        Vous avez dejà un compte ? <Link to='/login'>Se Connecter</Link>
+                        Already have an account ? <Link className="visibleLink" to='/login'>LOGIN</Link>
                     </p>
                 </div>
             </div >

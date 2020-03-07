@@ -32,10 +32,10 @@ class LoginForm extends Component {
 
     render() {
         if (this.props.isAuthenticated) {
-            return <Redirect to='/' />;
+            return <Redirect to='/logged' />;
         }
         return (
-            <div className='ui container'>
+            <div className='ui-container'>
                 <div className='ui segment'>
                     <form
                         onSubmit={this.props.handleSubmit(this.onSubmit)}
@@ -45,26 +45,21 @@ class LoginForm extends Component {
                             name='username'
                             type='text'
                             component={this.renderField}
-                            placeholder='Adresse mail ou Pseudo'
+                            placeholder='Email or Pseudo'
                         />
                         <Field
                             name='password'
                             type='password'
                             component={this.renderField}
-                            placeholder='Mot de Passe'
+                            placeholder='Password'
                         />
                         <Field
                             name='non_field_errors'
                             type='hidden'
                             component={this.hiddenField}
                         />
-                        <button type="primary">CONNECTION</button>
+                        <button className="button" type="primary">LOGIN</button>
                     </form>
-
-                    Ou <form action="/register">
-                        <input type="submit" value="Créer un compte" />
-                    </form>
-
                 </div>
             </div>
         );

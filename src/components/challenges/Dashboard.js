@@ -5,12 +5,17 @@ import ChallengeCreate from './ChallengeCreate';
 class Dashboard extends Component {
     render() {
         return (
-            <div className='ui container'>
-                <div>Challenge Create Form</div>
-                <ChallengeCreate />
+            <div className='ui-container'>
                 <ChallengeList />
+                <form action="/createChallenge">
+            <input type="submit" value="Creer un challenge" />
+        </form>
             </div>
+            
+            
         );
+       
+        
     }
 }
 

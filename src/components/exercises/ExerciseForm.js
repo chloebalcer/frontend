@@ -134,7 +134,7 @@ class ExerciseForm extends Component {
 
                 </form>
                 <form action="/ExerciseList">
-                    <input type="submit" value="Créer un compte" />
+                    <input type="submit" value="Retour à la liste" />
                 </form>
             </div >
 
