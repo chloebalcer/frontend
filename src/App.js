@@ -13,7 +13,7 @@ import Homepage from './components/homepage/homepage';
 import RegisterForm from './components/auth/RegisterForm';
 import Dashboard from './components/challenges/Dashboard';
 import ExerciseBoard from './components/exercises/ExerciseBoard';
-import editor from './components/editor/AceEditor.js';
+import editor from './components/editor/IDE.js';
 
 class App extends Component {
   componentDidMount() {
@@ -30,7 +30,7 @@ class App extends Component {
             <Route exact path='/challenges' component={Dashboard} />
             <Route exact path='/register' component={RegisterForm} />
             <Route exact path='/login' component={LoginForm} />
-            <Route exact path='/editor' component={editor}/>
+            <Route exact path='/editor' component={editor}/>  
           </Switch>
         </Router>
       </Provider>

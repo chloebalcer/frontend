@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
-import brace from 'brace';
+import { Form, FormGroup, Col, Button, Alert } from 'react-bootstrap';
+//import CodeEditor from './AceEditor'
+import AceEditor from 'react-ace';
 import 'brace/mode/python';
 import 'brace/theme/github';
-import { Form, FormGroup, Col, Button } from 'react-bootstrap';
+import 'brace/ext/language_tools';
 
-//import AceEditor from 'react-ace';
+
+const editorStyle = {
+  border: '1px solid lightgray',
+};
 
 export default class App extends React.Component {
 
@@ -13,14 +18,13 @@ export default class App extends React.Component {
       
       this.state= {
         value:"print ('hello world')",
-        value_output: "output"
+        value_output: ""
       }
      this.onChange = this.onChange.bind(this);
      this.handleChange = this.handleChange.bind(this);
   }
 
   onChange(newValue) {
-
     console.log('change', newValue);
   }
 
@@ -35,7 +39,6 @@ export default class App extends React.Component {
       body: command
     })
     .then(function(response) {
-      console.log("OEKOEKOEKOE", response);
       return response.json();
     }).then(function(data) {
       console.log('Data', data);
@@ -47,19 +50,39 @@ export default class App extends React.Component {
     });
   }
 
-  handleChange(event){
-    this.setState({value:event.target.value});
+  handleChange(newvalue){
+    this.setState({ value:newvalue });
   }
-
 
   render() {
     return (
       <div>
-            <textarea rows="4" cols="50" value={this.state.value} onChange={this.handleChange}></textarea>
+            <AceEditor
+              style={editorStyle}
+              readOnly={false}
+              value={this.state.value}
+              onChange={this.handleChange}
+              width="100%"
+              height="200px"
+              mode="python"
+              theme="github"
+              setOptions={{
+                enableBasicAutocompletion: true,
+                enableLiveAutocompletion: true,
+                enableSnippets: true
+              }}/>
             <button bsStyle="primary" onClick={() => this.run(this.state.value)}>
             Run
             </button>
-          <textarea type="textarea" class="form-control" style={{'white-space': 'pre-wrap'}} rows="4" cols="50" value={this.state.value_output} readOnly></textarea> 
+            <textarea 
+              type="textarea" 
+              class="form-control" 
+              style={{'white-space': 'pre-wrap'}} 
+              rows="15" 
+              cols="50" 
+              value={this.state.value_output} 
+              readOnly>
+            </textarea>
       </div>
     );
   }
