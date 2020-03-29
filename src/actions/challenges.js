@@ -23,7 +23,7 @@ export const getChallenge = id => async (dispatch, getState) => {
 
 export const addChallenge = formValues => async (dispatch, getState) => {
     const res = await axios.post(
-        'http://127.0.0.1:8000/api/challenges/create/',
+        'http://127.0.0.1:8000/api/challenges/',
         { ...formValues },
         tokenConfig(getState)
     );

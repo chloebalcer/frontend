@@ -16,6 +16,7 @@ import ChallengeCreate from './components/challenges/ChallengeCreate';
 import ExerciseCreate from './components/exercises/ExerciseCreate';
 import HomeLogged from './components/homepage/homeLogged';
 import editor from './components/editor/AceEditor.js';
+import 'antd/dist/antd.css';
 
 class App extends Component {
   componentDidMount() {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getChallenges } from '../../actions/challenges';
+import Challenges from '../../visuals/challenges'
+
 
 class ChallengeList extends Component {
     componentDidMount() {
@@ -9,15 +11,8 @@ class ChallengeList extends Component {
 
     render() {
         return (
-            <div className='ui-container' style={{ marginTop: '2rem' }}>
-                {this.props.challenges.map(challenge => (
-                    <div className='item' key={challenge.id}>
-                        <i className='large calendar outline middle aligned icon' />
-                        <div className='content'>
-                            <a className='header'>{challenge.title}</a>
-                        </div>
-                    </div>
-                ))}
+            <div>
+            <Challenges data={this.props.challenges}/>
             </div>
         );
     }

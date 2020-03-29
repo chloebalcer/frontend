@@ -106,7 +106,7 @@ class ExerciseForm extends Component {
     // Modifier la gestion des fichiers
     render() {
         return (
-            <div className='ui segment'>
+            <div className='container'>
                 <form
 
                     onSubmit={this.props.handleSubmit(this.onSubmit)}

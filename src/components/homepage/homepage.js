@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LoginForm from '../auth/LoginForm';
 
+
 class Homepage extends Component {
     render() {
         return (
@@ -8,7 +9,7 @@ class Homepage extends Component {
             <div className="thin"> Altoscholarship</div>
                 <div >Specially designed for students in finance eager to test their algorithms, collaborate and challenge themselves.</div>
                 <form action="/register">
-                        <input className="button" type="submit" value="START HERE" />
+                        <input className="blackbutton" type="submit" value="START HERE" />
                     </form>
                 </div>           
         );

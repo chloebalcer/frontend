@@ -52,13 +52,24 @@ export default class App extends React.Component {
 
 
   render() {
+    var center = {
+  
+      marginLeft: "3rem"
+
+    };
+
     return (
-      <div>
+      <div style={center}>
+        <h1>IDE</h1>
       <textarea rows="4" cols="50" value={this.state.value} onChange={this.handleChange}></textarea>
+      <br/>
+      <br/>
       
       <button bsStyle="primary" onClick={() => this.run(this.state.value)}>
         Run
       </button>
+      <br/>
+      <br/>
       <textarea type="textarea" class="form-control" style={{'white-space': 'pre-wrap'}} rows="4" cols="50" value={this.state.value_output} readOnly></textarea> 
       </div>
     );

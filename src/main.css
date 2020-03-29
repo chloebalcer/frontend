@@ -1,6 +1,6 @@
 @font-face {
-    font-family: const;
-    src: url("fonts/Construthinvism.ttf") format("truetype") ;
+    font-family: consto;
+    src: url("fonts/Lorano-ExtraLight.ttf") format("truetype") ;
 }
 @font-face {
     font-family: basicFont;
@@ -32,7 +32,7 @@
     color: #131515;
     font-weight:2000;
     letter-spacing: 3px;
-    font-size: small;
+    font-size: 12px;
     font-family: basicFont;
     
     
@@ -41,42 +41,54 @@
 .link:hover { color:  #00F2F2; }
 
 .brandName{
-    font-family: const;
+    font-family: consto;
     display : inline-flex;
-    margin: 50px 50px 50px 100px;
-    color: #0D00A4;
-    font-weight: bolder;
+    margin: 50px 20px 50px 50px;
+    color: #00F2F2;
+    font-weight: bold;
     letter-spacing: 6px;
-    font-size: 3em;
+    font-size: 2em;
     -webkit-text-stroke: 3px #00F2F2;
   
 }
 
-<<<<<<< HEAD
+.container{
+    margin-left: 3rem;
+    margin-right: 3rem;
+    color: black;
+}
 /* * {background-color: #FCFFFC} */
-=======
 * {background-color: #FCFFFC}
->>>>>>> css
+
 
 
 .wrapper{
     margin-top: 5em;
-    margin-left: 5em;
+    margin-left: 50px;
     text-align: left;
     line-height: 3em;
     font-size: 20px;
     font-family: basicFont;
+    color: black;
 }
 
-.button{
+.blackbutton{
     color: white;
     border: none;
     background-color: black;
     font-family: basicFont;
-    border-radius: 4px;
-    padding: 10px 24px;
-    font-weight: bolder;
+    font-size: 1rem;
     letter-spacing: 2px;
+    height: 32px;
+  width: 120px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 2px;
+  font-size: 0.5em;
+  margin: 20px 10px;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .thin{
@@ -95,7 +107,6 @@
     font-weight:2000;
     letter-spacing: 3px;
     font-size: small;
-
 }
 
 .field{
